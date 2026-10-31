@@ -18,6 +18,17 @@ jobs:
         with:
          java-version: '11'
          distribution: 'temurin' 
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      # 1. Installer Node.js (requis pour Zowe CLI)
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      # 2. Installer globalement la CLI Zowe
+      - name: Install Zowe CLI
+        run: npm install -g @zowe/cli
       - name: Run COBOL Check
         env:
           ZOWE_USERNAME: ${{ secrets.ZOWE_USERNAME }}
