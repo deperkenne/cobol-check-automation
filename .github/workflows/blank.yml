@@ -25,7 +25,6 @@ jobs:
         uses: actions/setup-java@v2
         with:
          java-version: '11'
-      # Runs a single command using the runners shell
       - name: Run COBOL Check
         env:
           ZOWE_USERNAME: ${{ secrets.ZOWE_USERNAME }}
