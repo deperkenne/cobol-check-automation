@@ -25,7 +25,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-
       # 2. Installer globalement la CLI Zowe
       - name: Install Zowe CLI
         run: npm install -g @zowe/cli
