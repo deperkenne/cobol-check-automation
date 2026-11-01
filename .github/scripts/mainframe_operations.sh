@@ -14,7 +14,7 @@ cd cobolcheck
 echo "Changed to $(pwd)"
 ls-al
 # Make cobolcheck executable
-chmod -R +x cobolcheck
+chmod  +x cobolcheck
 echo "Made cobolcheck executable"
 # Make script in scripts directory executable
 cd scripts
