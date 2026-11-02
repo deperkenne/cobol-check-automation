@@ -29,10 +29,6 @@ ls -al
 #java-version
 # Set ZOWE_USERNAME
 ZOWE_USERNAME="Z85547" # Replace with the actual username
-# Change to the cobolcheck directory
-cd cobolcheck
-echo "Changed to $(pwd)"
-ls-al
 # Make cobolcheck executable
 chmod  +x cobolcheck
 echo "Made cobolcheck executable"
