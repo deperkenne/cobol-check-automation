@@ -58,6 +58,7 @@ run_cobolcheck() {
   fi
   # Copy the JCL file if it exists
   if [ -f "${program}.JCL" ]; then
+  echo " programm not exist..................."
   if cp ${program}.JCL "//'${ZOWE_USERNAME}.JCL($program)'"; then
   echo "Copied ${program}.JCL to ${ZOWE_USERNAME}.JCL($program)"
   else
