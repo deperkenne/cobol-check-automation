@@ -6,14 +6,20 @@
 #export JAVA_HOME=/usr/lpp/java/J8.0_64
 #export PATH=$PATH:/usr/lpp/zowe/cli/node/bin
 
+
+
 export JAVA_HOME=/usr/lpp/java/J8.0_64
 export PATH="$PATH:$JAVA_HOME/bin:/usr/lpp/zowe/cli/node/bin"
- 
+
+exit -e
+
+ # Set ZOWE_USERNAME
+export ZOWE_USERNAME="Z85547"
 # --- Identifiant (peut être surchargé par l'environnement) ---
-ZOWE_USERNAME="${ZOWE_USERNAME:-Z85547}"   # remplacez par votre identifiant
+#ZOWE_USERNAME="${ZOWE_USERNAME:-Z85547}"   # remplacez par votre identifiant
 # Les noms de data sets MVS sont en majuscules
-HLQ=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
-ls -al
+#HLQ=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
+#ls -al
  
 # --- Vérifications préalables ---
 java -version || { echo "Java introuvable (JAVA_HOME=$JAVA_HOME)" >&2; exit 1; }
