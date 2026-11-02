@@ -34,10 +34,12 @@ chmod  +x cobolcheck
 echo "Made cobolcheck executable"
 # Make script in scripts directory executable
 cd scripts
+echo "Changed to scirpz $(pwd)"
 chmod +x linux_gnucobol_run_tests
 echo "Made linux_gnucobol_run_tests executable"
-cd ..
 
+cd ..
+echo "Changed to cobolcheck $(pwd)"
 run_cobolcheck() {
   program=$1
   echo "Running cobolcheck for $program"
