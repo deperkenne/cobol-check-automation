@@ -1,38 +1,47 @@
-# This is a basic workflow to help you get started with Actions
-name:  COBOL Check Automation
+name: COBOL Check Automation
+
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+    branches: ["main"]
+
+concurrency:
+  group: cobol-check-${{ github.ref }}
+  cancel-in-progress: true      # annule l'ancien run si un nouveau push arrive
+
 jobs:
-  # This workflow contains a single job called "build"
- cobol-check:
+  cobol-check:
     runs-on: ubuntu-latest
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    timeout-minutes: 20
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Set up Java
         uses: actions/setup-java@v5
         with:
-         java-version: '11'
-         distribution: 'temurin' 
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      # 1. Installer Node.js (requis pour Zowe CLI)
+          java-version: '11'
+          distribution: 'temurin'
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-      # 2. Installer globalement la CLI Zowe
+          node-version: '22'
+
+      - name: Cache npm
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: npm-zowe-v3-lts-${{ runner.os }}-v1   # changez v1 en v2 pour vider le cache
+
       - name: Install Zowe CLI
-        run: npm install -g @zowe/cli
+        run: |
+          npm install -g @zowe/cli@zowe-v3-lts --no-audit --no-fund --prefer-offline
+          zowe --version
+
       - name: Run COBOL Check
         env:
           ZOWE_USERNAME: ${{ secrets.ZOWE_USERNAME }}
           ZOWE_PASSWORD: ${{ secrets.ZOWE_PASSWORD }}
         run: |
-         chmod +x .github/scripts/zowe_operations.sh
+          chmod +x .github/scripts/zowe_operations.sh
           .github/scripts/zowe_operations.sh
-          
