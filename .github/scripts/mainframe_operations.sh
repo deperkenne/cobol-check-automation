@@ -29,7 +29,7 @@ run_cobolcheck() {
   ./cobolcheck-p $program
   echo "Cobolcheck execution completed for $program (exceptions may have occurred)"
   # Check if CC##99.CBL was created, regardless of cobolcheck exit status
-  if[-f "CC##99.CBL" ]; then
+  if [ -f "CC##99.CBL" ]; then
   echo "file exist"
   # Copy to the MVS dataset
   if cp CC##99.CBL "//'${ZOWE_USERNAME}.CBL($program)'"; then
