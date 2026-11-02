@@ -48,5 +48,5 @@ jobs:
           ZOWE_OPT_PASSWORD: ${{ secrets.ZOWE_PASSWORD }}
           ZOWE_OPT_REJECT_UNAUTHORIZED: ${{ secrets.ZOWE_OPT_REJECT_UNAUTHORIZED }}
         run: |
-          chmod +x .github/scripts/zowe_operations.sh
+          chmod +x .github/scripts/mainframe_operations.sh
           .github/scripts/mainframe_operations.sh
