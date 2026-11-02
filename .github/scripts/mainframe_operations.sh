@@ -8,7 +8,7 @@ export PATH=$PATH:/usr/lpp/zowe/cli/node/bin
 # Check Java availability
 java-version
 # Set ZOWE_USERNAME
-ZOWE_USERNAME="Z99998" # Replace with the actual username
+ZOWE_USERNAME="Z85547" # Replace with the actual username
 # Change to the cobolcheck directory
 cd cobolcheck
 echo "Changed to $(pwd)"
@@ -30,6 +30,7 @@ run_cobolcheck() {
   echo "Cobolcheck execution completed for $program (exceptions may have occurred)"
   # Check if CC##99.CBL was created, regardless of cobolcheck exit status
   if[-f "CC##99.CBL" ]; then
+  echo "file exist"
   # Copy to the MVS dataset
   if cp CC##99.CBL "//'${ZOWE_USERNAME}.CBL($program)'"; then
   echo "Copied CC##99.CBL to ${ZOWE_USERNAME}.CBL($program)"
