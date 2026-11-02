@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 # zowe_operations.sh
 # Convert username to lowercase
 LOWERCASE_USERNAME=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
