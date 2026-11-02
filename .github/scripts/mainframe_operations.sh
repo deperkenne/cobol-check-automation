@@ -11,8 +11,6 @@
 export JAVA_HOME=/usr/lpp/java/J8.0_64
 export PATH="$PATH:$JAVA_HOME/bin:/usr/lpp/zowe/cli/node/bin"
 
-exit -e
-
  # Set ZOWE_USERNAME
 export ZOWE_USERNAME="Z85547"
 # --- Identifiant (peut être surchargé par l'environnement) ---
