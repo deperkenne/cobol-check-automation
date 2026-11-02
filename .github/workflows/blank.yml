@@ -46,6 +46,7 @@ jobs:
           ZOWE_OPT_PORT: ${{ secrets.ZOWE_OPT_PORT }}
           ZOWE_OPT_USER: ${{ secrets.ZOWE_USERNAME }}
           ZOWE_OPT_PASSWORD: ${{ secrets.ZOWE_PASSWORD }}
+          ZOWE_OPT_REJECT_UNAUTHORIZED: ${{ secrets.ZOWE_OPT_REJECT_UNAUTHORIZED }}
         run: |
           chmod +x .github/scripts/zowe_operations.sh
           .github/scripts/zowe_operations.sh
