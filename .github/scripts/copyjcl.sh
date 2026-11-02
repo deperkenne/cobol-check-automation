@@ -6,8 +6,8 @@ echo "Vérification de la connexion à z/OSMF..."
 zowe zosmf check status
 # Check if directory exists, create if it doesn't
 #zowe zos-files upload file-to-uss "./cobol-check/NUMBERS.JCL" "/z/$LOWERCASE_USERNAME/cobolcheck/NUMBERS.JCL"
-zowe zos-files upload file-to-uss "./cobol-check/scripts " "/z/$LOWERCASE_USERNAME/cobolcheck/scripts" --recursive
-zowe zos-files upload file-to-uss "./cobol-check/src " "/z/$LOWERCASE_USERNAME/cobolcheck/src" --recursive
+zowe zos-files upload dir-to-uss "./cobol-check/scripts " "/z/$LOWERCASE_USERNAME/cobolcheck/scripts" --recursive
+zowe zos-files upload dir-to-uss "./cobol-check/src " "/z/$LOWERCASE_USERNAME/cobolcheck/src" --recursive
 
 
 
