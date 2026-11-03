@@ -41,14 +41,13 @@ echo "Made linux_gnucobol_run_tests executable"
 cd ..
 
 # Pour voir l'arborescence et trouver où se cache le lanceur
-find . -maxdepth 2 -not -path '*/.*'
 
 echo "Changed to cobolcheck $(pwd)"
 run_cobolcheck() {
   program=$1
   echo "Running cobolcheck for $program"
   # Run cobolcheck, but don't exit if it fails
-  ./cobolcheck-p $program
+  ./cobolcheck -p $program
   echo "Cobolcheck execution completed for $program (exceptions may have occurred)"
   # Check if CC##99.CBL was created, regardless of cobolcheck exit status
   if [ -f "CC##99.CBL" ]; then
