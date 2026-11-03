@@ -2,14 +2,14 @@
 #!/bin/bash
 # mainframe_operations.sh
 # Set up environment
-#export PATH=$PATH:/usr/lpp/java/J8.0_64/bin
-#export JAVA_HOME=/usr/lpp/java/J8.0_64
-#export PATH=$PATH:/usr/lpp/zowe/cli/node/bin
-
-
-
+export PATH=$PATH:/usr/lpp/java/J8.0_64/bin
 export JAVA_HOME=/usr/lpp/java/J8.0_64
-export PATH="$PATH:$JAVA_HOME/bin:/usr/lpp/zowe/cli/node/bin"
+export PATH=$PATH:/usr/lpp/zowe/cli/node/bin
+
+
+
+#export JAVA_HOME=/usr/lpp/java/J8.0_64
+#export PATH="$PATH:$JAVA_HOME/bin:/usr/lpp/zowe/cli/node/bin"
 
  # Set ZOWE_USERNAME
 export ZOWE_USERNAME="Z85547"
@@ -28,7 +28,7 @@ ls -al
 # Check Java availability
 #java-version
 # Set ZOWE_USERNAME
-ZOWE_USERNAME="Z85547" # Replace with the actual username
+#ZOWE_USERNAME="Z85547" # Replace with the actual username
 # Make cobolcheck executable
 chmod  +x cobolcheck
 echo "Made cobolcheck executable"
