@@ -13,14 +13,6 @@ for filepath in src/main/cobol/*; do
     filename=$(basename "$filename" .CBL) # Gérer les extensions en minuscules ou majuscules
 
     # Vérifier si le fichier n'est pas "NUMBERS"
-    if [ "$filename" != "NUMBERS" ]; then
-        echo "Copie de $filename vers le dataset MVS..."
-        if cp "$filepath" "//'${ZOWE_USERNAME}.CBL($filename)'"; then
-            echo "Succès pour $filename"
-        else
-            echo "Échec de la copie pour $filename"
-        fi
-    else
-        echo "Ignoré : $filename"
-    fi
+    echo "Copie de $filename vers le dataset MVS..."
+    cp "$filepath" "//'${ZOWE_USERNAME}.CBL($filename)'"        
 done
