@@ -3,7 +3,8 @@ export PATH="$PATH:$JAVA_HOME/bin:/usr/lpp/zowe/cli/node/bin"
 
 # Set ZOWE_USERNAME
 export ZOWE_USERNAME="Z85547"
-
+pwd > chemin.txt
+cat chemin.txt
 cd cobolcheck
 
 # Parcourir tous les fichiers du dossier src/main/cobol
