@@ -1,3 +1,5 @@
+#!/bin/bash
+
 export JAVA_HOME=/usr/lpp/java/J8.0_64
 export PATH="$PATH:$JAVA_HOME/bin:/usr/lpp/zowe/cli/node/bin"
 
