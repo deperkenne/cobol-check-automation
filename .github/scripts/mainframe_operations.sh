@@ -39,6 +39,10 @@ chmod +x linux_gnucobol_run_tests
 echo "Made linux_gnucobol_run_tests executable"
 
 cd ..
+
+# Pour voir l'arborescence et trouver où se cache le lanceur
+find . -maxdepth 2 -not -path '*/.*'
+
 echo "Changed to cobolcheck $(pwd)"
 run_cobolcheck() {
   program=$1
