@@ -10,7 +10,7 @@ cat chemin.txt
 cd cobolcheck
 
 # Parcourir tous les fichiers du dossier src/main/cobol
-for filepath in src/main/cobol/*; do
+for filepath in ./src/main/cobol/*; do
     # Extraire uniquement le nom du fichier sans le chemin (ex: NUMBERS.cbl -> NUMBERS)
     filename=$(basename "$filepath" .cbl)
     filename=$(basename "$filename" .CBL) # Gérer les extensions en minuscules ou majuscules
