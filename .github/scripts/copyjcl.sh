@@ -10,7 +10,7 @@ zowe zosmf check status
 #zowe zos-files upload file-to-uss "./cobol-check/cobolcheck.txt" "/z/$LOWERCASE_USERNAME/cobolcheck/cobocheck.txt"
 #zowe zos-files upload dir-to-uss "./cobol-check/scripts" "/z/$LOWERCASE_USERNAME/cobolcheck/scripts" --recursive
 #zowe zos-files upload dir-to-uss "./cobol-check/src" "/z/$LOWERCASE_USERNAME/cobolcheck/src" --recursive
-zowe files upload file-to-uss "./cobol-check/cobol-check-0.2.19.jar" "/z/$LOWERCASE_USERNAME/cobolcheck/bin/cobol-check-0.2.19.jar" --binary
+zowe files upload file-to-uss "./cobol-check/bin/cobol-check-0.2.19.jar" "/z/$LOWERCASE_USERNAME/cobolcheck/bin/cobol-check-0.2.19.jar" --binary
 
 
 
