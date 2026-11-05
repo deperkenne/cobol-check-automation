@@ -49,12 +49,14 @@ run_cobolcheck() {
   # Run cobolcheck, but don't exit if it fails
   ./cobolcheck -p $program
   echo "Cobolcheck execution completed for $program (exceptions may have occurred)"
+  cd testruns
   # Check if CC##99.CBL was created, regardless of cobolcheck exit status
   if [ -f "CC##99.CBL" ]; then
   echo "file exist"
   # Copy to the MVS dataset
   if cp CC##99.CBL "//'${ZOWE_USERNAME}.CBL($program)'"; then
   echo "Copied CC##99.CBL to ${ZOWE_USERNAME}.CBL($program)"
+  cd .. # comeback to main repo cobolcheck
   else
   echo "Failed to copy CC##99.CBL to ${ZOWE_USERNAME}.CBL($program)"
   fi
