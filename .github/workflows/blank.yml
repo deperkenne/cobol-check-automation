@@ -48,11 +48,11 @@ jobs:
           ZOWE_OPT_PASSWORD: ${{ secrets.ZOWE_PASSWORD }}
           ZOWE_OPT_REJECT_UNAUTHORIZED: ${{ secrets.ZOWE_OPT_REJECT_UNAUTHORIZED }}
         run: |
-          #chmod +x .github/scripts/copyjcl.sh
-            #.github/scripts/copyjcl.sh
-          chmod +x .github/scripts/mainframe_operations.sh
-          sshpass -p "${{ secrets.ZOWE_PASSWORD }}" \
-           ssh -o StrictHostKeyChecking=no \
-            "${{ secrets.ZOWE_USERNAME }}@${{ secrets.ZOWE_OPT_HOST }}" 'sh -s' \
-             < .github/scripts/mainframe_operations.sh
+          chmod +x .github/scripts/copyjcl.sh
+            .github/scripts/copyjcl.sh
+          #chmod +x .github/scripts/mainframe_operations.sh
+          #sshpass -p "${{ secrets.ZOWE_PASSWORD }}" \
+           #ssh -o StrictHostKeyChecking=no \
+            #"${{ secrets.ZOWE_USERNAME }}@${{ secrets.ZOWE_OPT_HOST }}" 'sh -s' \
+             #< .github/scripts/mainframe_operations.sh
             
